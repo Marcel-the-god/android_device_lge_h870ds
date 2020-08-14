@@ -18,8 +18,12 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
+# Inherit some common AICP stuff.
+$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
+
+#Bootanimation
+TARGET_SCREEN_HEIGHT := 2880
+TARGET_SCREEN_WIDTH := 1440
 
 # Inherit from h870ds device
 $(call inherit-product, device/lge/h870ds/device.mk)
@@ -37,9 +41,10 @@ PRODUCT_MODEL := LG-H870DS
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    DEVICE_MAINTAINERS="Marcel (@LG_SUCKS)" \
     TARGET_DEVICE="lucye" \
     PRODUCT_DEVICE="lucye" \
     PRODUCT_NAME="lucye_global_com" \
     PRIVATE_BUILD_DESC="lucye_global_com-user 9 PKQ1.190522.001 192632011c72d release-keys"
 
-BUILD_FINGERPRINT := "lge/lucye_global_com/lucye:9/PKQ1.190522.001/192632011c72d:user/release-keys"
+BUILD_FINGERPRINT := "google/coral/coral:10/QQ3A.200805.001/6578210:user/release-keys"
